@@ -39,9 +39,8 @@ const router = createRouter({
         console.log('users beforeEnter');
         console.log(to, from);
         next();
-      }
+      },
     },
-
     { path: '/:notFound(.*)', component: NotFound },
   ],
   linkActiveClass: 'active',
@@ -51,21 +50,17 @@ const router = createRouter({
       return savedPosition;
     }
     return { left: 0, top: 0 };
-  }
+  },
 });
 
-router.beforeEach(function(to, from, next) {
+router.beforeEach(function (to, from, next) {
   console.log('Global beforeEach');
   console.log(to, from);
-  // if (to.name === 'team-members') {
-  //   next();
-  // } else {
-  //   next({name: 'team-members', params: {teamId: 't2'}});
-  // }
+
   next();
 });
 
-router.afterEach(function(to, from) {
+router.afterEach(function (to, from) {
   // sending analytics data
   console.log('Global afterEach');
   console.log(to, from);
