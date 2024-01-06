@@ -9,8 +9,7 @@
 import TheNavigation from './components/nav/TheNavigation.vue';
 
 export default {
-  // inject: ['users', 'teams'], // IS THIS SUPPOSED TO BE HERE? 
-  components: {
+    components: {
     TheNavigation,
   },
   data() {
